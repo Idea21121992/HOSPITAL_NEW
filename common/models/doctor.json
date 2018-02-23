@@ -1,0 +1,77 @@
+{
+  "name": "Doctor",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Mob_No": {
+      "type": "number"
+    },
+    "Specification": {
+      "type": "string"
+    },
+    "Doctor_Id": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "patients": {
+      "type": "hasMany",
+      "model": "Patient",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "Message"
+    },
+    "reports": {
+      "type": "hasMany",
+      "model": "Report",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "Message"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "Cancer_Spacilist",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "Bone_Disease_Spacelist",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "Skin_Disease_Spacelist",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "Physician",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "Child_Spacilist",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

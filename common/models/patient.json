@@ -1,0 +1,46 @@
+{
+  "name": "Patient",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Mob_No": {
+      "type": "number",
+      "required": true
+    },
+    "Address": {
+      "type": "string"
+    },
+    "AdhaarNo": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "doctor": {
+      "type": "belongsTo",
+      "model": "Doctor",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "reports": {
+      "type": "hasMany",
+      "model": "Report",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "Message"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

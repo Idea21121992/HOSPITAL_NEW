@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "Mongo_New": {
+    "host": "192.168.99.100",
+    "port": 32768,
+    "url": "",
+    "database": "Mongo_New",
+    "password": "",
+    "name": "Mongo_New",
+    "user": "",
+    "connector": "mongodb"
+  }
+}
